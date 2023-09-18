@@ -1,11 +1,11 @@
-About stestr
-============
+About stestr-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stestr-feedstock/blob/main/LICENSE.txt)
 
 Home: http://stestr.readthedocs.io/en/latest/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stestr-feedstock/blob/main/LICENSE.txt)
 
 Summary: A parallel Python test runner built around subunit
 
