@@ -1,5 +1,5 @@
 {% set name = "stestr" %}
-{% set version = "4.0.1" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stestr-{{ version }}.tar.gz
-  sha256: c2c1c73bfc7cfca39127159e3fbc74193aebf2cd02d8a0427f2e58648e36cf26
+  sha256: 5f61c369eece63c292d13599e12aa158af7685990643f24dd6fa7fabfe34e98a
 
 build:
   entry_points:
@@ -22,6 +22,8 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - extras >=1.0.0
+    - tomlkit >=0.11.6
     - cliff >=2.8.0
     - fixtures >=3.0.0
     - future
