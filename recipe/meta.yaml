@@ -21,6 +21,7 @@ requirements:
     - pbr >=2.0.0
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - extras >=1.0.0
     - tomlkit >=0.11.6
