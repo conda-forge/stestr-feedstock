@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stestr-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stestr-{{ version }}.tar.gz
   sha256: 5f61c369eece63c292d13599e12aa158af7685990643f24dd6fa7fabfe34e98a
 
 build:
@@ -14,13 +14,14 @@ build:
     - stestr=stestr.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pbr >=2.0.0
     - pip
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
   run:
     - extras >=1.0.0
     - tomlkit >=0.11.6
@@ -28,7 +29,7 @@ requirements:
     - fixtures >=3.0.0
     - future
     - pbr !=2.1.0,!=4.0.0,!=4.0.1,!=4.0.2,!=4.0.3,>=2.0.0
-    - python >=3.6
+    - python >={{ python_min }}
     - python-subunit >=1.4.0
     - pyyaml >=3.10.0
     - testtools >=2.2.0
@@ -44,6 +45,7 @@ test:
     - stestr -h
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://stestr.readthedocs.io/en/latest/
