@@ -20,7 +20,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - flit_core >=3.12,<4
+    - flit-core >=3.12,<4
   run:
     - cliff >=2.8.0
     - fixtures >=3.0.0
