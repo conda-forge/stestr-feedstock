@@ -18,24 +18,18 @@ build:
 
 requirements:
   host:
-    - pbr >=2.0.0
     - pip
     - python {{ python_min }}
-    - setuptools
+    - flit_core >=3.12,<4
   run:
-    - extras >=1.0.0
-    - tomlkit >=0.11.6
     - cliff >=2.8.0
     - fixtures >=3.0.0
-    - future
-    - pbr !=2.1.0,!=4.0.0,!=4.0.1,!=4.0.2,!=4.0.3,>=2.0.0
     - python >={{ python_min }}
     - python-subunit >=1.4.0
     - pyyaml >=3.10.0
     - testtools >=2.2.0
     - voluptuous >=0.8.9
-  run_constrained:
-    - subunit2sql >=1.8.0
+    - tomlkit >=0.11.6
 
 test:
   imports:
