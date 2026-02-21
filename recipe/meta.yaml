@@ -1,5 +1,5 @@
 {% set name = "stestr" %}
-{% set version = "4.1.0" %}
+{% set version = "4.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stestr-{{ version }}.tar.gz
-  sha256: 5f61c369eece63c292d13599e12aa158af7685990643f24dd6fa7fabfe34e98a
+  sha256: b60495225fa783476252572adda29d33ae3706f95fc32564f78fb4e7c9e5df20
 
 build:
   entry_points:
     - stestr=stestr.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
