@@ -1,5 +1,5 @@
 {% set name = "stestr" %}
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stestr-{{ version }}.tar.gz
-  sha256: 45ec639f2d1cc372e3630613b93f37cf29d3dfe69d49d4f3f9408d37b11bc29c
+  sha256: b60495225fa783476252572adda29d33ae3706f95fc32564f78fb4e7c9e5df20
 
 build:
   entry_points:
