@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: stestr
+  version: "4.2.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/stestr-${{ version }}.tar.gz
+  sha256: b60495225fa783476252572adda29d33ae3706f95fc32564f78fb4e7c9e5df20
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - stestr=stestr.cli:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - flit-core >=3.12,<4
+  run:
+    - cliff >=2.8.0
+    - fixtures >=3.0.0
+    - python >=${{ python_min }}
+    - python-subunit >=1.4.0
+    - pyyaml >=3.10.0
+    - testtools >=2.2.0
+    - voluptuous >=0.8.9
+    - tomlkit >=0.11.6
+
+tests:
+  - python:
+      imports:
+        - stestr
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - stestr -h
+
+about:
+  summary: A parallel Python test runner built around subunit
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: http://stestr.readthedocs.io/en/latest/
+  repository: https://github.com/mtreinish/stestr
+
+extra:
+  recipe-maintainers:
+    - wshanks
+    - BastianZim
